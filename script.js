@@ -24,6 +24,7 @@ document.querySelectorAll(".video-item video").forEach((v) => videoObserver.obse
 document.querySelectorAll(".video-item").forEach((item) => {
   const video = item.querySelector("video");
   const hint = item.querySelector(".sound-hint");
+  if (!video) return;
   item.addEventListener("click", () => {
     video.muted = !video.muted;
     hint.textContent = video.muted ? "Tap for sound" : "Sound on";
